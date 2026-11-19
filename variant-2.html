@@ -5,26 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Пробная аттестация по истории искусства · Вариант 2</title>
 <style>
-:root { color-scheme:light; --ink:#23283a; --mute:#535a70; --paper:#f2f5fa; --panel:#fff; --line:#dbe3ed; --accent:#305584; --accent-light:#e6effa; --good:#21583e; --good-bg:#e7f4eb; --bad:#852d36; --bad-bg:#faeaec; }
+:root { color-scheme:light; --ink:#23283a; --mute:#535a70; --paper:#f3f3f9; --panel:#fff; --line:#dedfea; --accent:#483584; --accent-light:#ece6fa; --good:#21583e; --good-bg:#e7f4eb; --bad:#852d36; --bad-bg:#faeaec; }
 * { box-sizing:border-box; }
 body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.55 system-ui,sans-serif; }
 .wrap { max-width:70rem; margin:auto; padding-inline:clamp(1rem,4vw,3rem); }
-header { background:#1a2a46; color:#fff; padding:clamp(2.25rem,6vw,5rem) 0 2rem; border-bottom:5px solid #91afd8; }
+header { background:#221c3e; color:#fff; padding:clamp(2.25rem,6vw,5rem) 0 2rem; border-bottom:5px solid #a892db; }
 h1,h2 { font-family:Georgia,serif; line-height:1.12; margin:0; font-weight:500; }
 h1 { max-width:16ch; font-size:clamp(2.6rem,7vw,5rem); letter-spacing:-.045em; }
 h2 { font-size:clamp(1.6rem,4vw,2.25rem); }
 h3 { margin:0; }
 p { margin:.65rem 0; }
 .home { color:#fff; display:inline-block; margin-bottom:1.25rem; text-underline-offset:.22em; }
-.sub { color:#dde7fa; font-size:1.1rem; margin-top:.85rem; }
+.sub { color:#e7ddfa; font-size:1.1rem; margin-top:.85rem; }
 .utility,.block-meta,.nav,.actions { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; }
 .utility { margin-top:1.4rem; }
 button { font:inherit; font-weight:600; border:1px solid var(--accent); background:var(--accent); color:#fff; border-radius:.55rem; padding:.55rem .85rem; cursor:pointer; }
-button.secondary { color:var(--accent); background:#fff; border-color:#a8bbd4; }
-header button.secondary { background:transparent; color:#fff; border-color:#91a9cb; }
+button.secondary { color:var(--accent); background:#fff; border-color:#bab0d3; }
+header button.secondary { background:transparent; color:#fff; border-color:#a492cd; }
 button[aria-pressed="true"] { background:var(--accent); color:white; border-color:var(--accent); }
-button:focus-visible, summary:focus-visible, textarea:focus-visible, input:focus-visible, a:focus-visible { outline:3px solid #507bb4; outline-offset:4px; }
-header button:focus-visible { outline-color:#c8ddfb; }
+button:focus-visible, summary:focus-visible, textarea:focus-visible, input:focus-visible, a:focus-visible { outline:3px solid #7450be; outline-offset:4px; }
+header button:focus-visible { outline-color:#dac8ff; }
 main { padding-top:1.3rem; padding-bottom:4rem; }
 .intro { max-width:72ch; color:var(--mute); margin:0 0 1rem; }
 .progress { padding:1rem 0; display:grid; grid-template-columns:minmax(0,1fr); gap:.35rem; }
@@ -51,17 +51,17 @@ textarea[readonly] { background:var(--paper); }
 .feedback small { color:var(--mute); font-size:.9rem; }
 .check { display:flex; align-items:baseline; gap:.6rem; margin:.4rem 0; }
 .review-links { display:flex; align-items:baseline; gap:.35rem .55rem; flex-wrap:wrap; margin:.35rem 0; }
-.review-links button { background:transparent; color:var(--accent); padding:.15rem .45rem; border-color:#a4bcda; }
+.review-links button { background:transparent; color:var(--accent); padding:.15rem .45rem; border-color:#b8a8dc; }
 .prompt { scroll-margin-top:1rem; }
 .prompt:focus { outline:2px solid var(--accent); outline-offset:4px; }
-.result { background:var(--accent-light); border:1px solid #b9cde8; padding:1rem; border-radius:.8rem; margin:1rem 0; }
+.result { background:var(--accent-light); border:1px solid #cabbe6; padding:1rem; border-radius:.8rem; margin:1rem 0; }
 .pictures { display:grid; grid-template-columns:1fr 1fr; align-items:start; gap:.8rem; margin:.85rem 0; }
 .pictures.single { grid-template-columns:minmax(0,1fr); max-width:42rem; }
 figure { margin:0; min-width:0; }
 summary { cursor:pointer; font-weight:650; }
 figure img { width:auto; max-width:100%; max-height:35rem; height:auto; display:block; border-radius:.4rem; margin:.35rem 0; }
 dialog { max-width:min(96vw,1120px); max-height:94vh; color:var(--ink); border:1px solid var(--line); border-radius:.6rem; padding:1rem; }
-dialog::backdrop { background:#101e31cf; }
+dialog::backdrop { background:#161222cf; }
 dialog img { display:block; max-width:100%; max-height:76vh; object-fit:contain; margin:auto; }
 dialog button { margin-bottom:.55rem; }
 footer { margin-top:1.6rem; color:var(--mute); font-size:.9rem; }
