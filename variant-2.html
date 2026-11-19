@@ -29,6 +29,7 @@ header button:focus-visible { outline-color:#dac8ff; }
 main { padding-top:1.3rem; padding-bottom:4rem; }
 .intro { max-width:72ch; color:var(--mute); margin:0 0 1rem; }
 .progress { padding:1rem 0; display:grid; grid-template-columns:minmax(0,1fr); gap:.35rem; }
+.progress-heading { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.5rem 1rem; }
 progress { width:100%; accent-color:var(--accent); height:.6rem; }
 .nav { padding-bottom:1rem; }
 .block { scroll-margin-top:1rem; }
@@ -88,7 +89,10 @@ a { color:var(--accent); }
   <noscript><p>Открой файл в браузере с включённым JavaScript, чтобы увидеть вопросы и проверить ответы.</p></noscript>
   <p class="intro">Тренировочный тест по материалам курса «Как стать искусствоведом». После завершения появятся ответы, примеры формулировок и критерии для самопроверки.</p>
   <div class="progress">
-    <label id="progressLabel" for="progress">Заполнено 0 из 33</label>
+    <div class="progress-heading">
+      <label id="progressLabel" for="progress">Заполнено 0 из 33</label>
+      <button id="reset" class="secondary" type="button">Начать заново</button>
+    </div>
     <progress id="progress" max="33" value="0"></progress>
   </div>
   <nav class="nav" aria-label="Блоки теста">
@@ -109,7 +113,6 @@ a { color:var(--accent); }
     <button id="back" class="secondary" type="button" hidden>Предыдущий блок</button>
     <button id="next" type="button">Следующий блок</button>
     <button id="finish" type="button" hidden>Завершить и проверить</button>
-    <button id="reset" class="secondary" type="button" hidden>Начать заново</button>
   </div>
   <p id="notice" class="notice" role="status"></p>
 </main>
@@ -402,7 +405,6 @@ function showBlock(index, moveFocus = true) {
   back.hidden = index === 0;
   next.hidden = index === 2;
   finish.hidden = state.reviewed || index !== 2;
-  reset.hidden = !state.reviewed;
   notice.textContent = "";
   persist();
   if (moveFocus) {
@@ -472,7 +474,6 @@ function updateScore() {
 function showReview() {
   result.hidden = false;
   finish.hidden = true;
-  reset.hidden = false;
   updateTimer();
   closedFields.forEach(({id, choices, correct, feedback}) => {
     choices.forEach(({label, input}, index) => {
@@ -546,7 +547,7 @@ finish.addEventListener("click", () => {
 });
 
 reset.addEventListener("click", () => {
-  if (!window.confirm("Удалить ответы этой попытки и начать заново?")) return;
+  if (!window.confirm("Начать этот вариант заново? Ответы и таймер сбросятся.")) return;
   try { localStorage.removeItem(storageKey); }
   catch { /* Nothing is stored when storage is unavailable. */ }
   location.reload();
